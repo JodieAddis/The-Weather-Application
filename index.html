@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jodie Addis">
+    <meta name="description" content="A weather application which show the weather from any city you choose">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/img/R.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <section>
+            <div class="menu">
+                <img src="./assets/img/list.svg" alt="icon hamburger">
+                <img src="./assets/img/iconmonstr-weather-124.svg" alt="logo of the application">
+            </div>
+            <nav class="navBar">
+                <form action="" class="navBar_form">
+                    <input type="text" placeholder="City name" id="navBar_input">
+                    <!-- <img src="./assets/img/plus-circle-fill.svg" alt="add icon" class="navBar_inputAdd"> -->
+                    <div>
+                        <button type="submit" class="navBar_inputAdd">Add</button>
+                    </div>
+                </form>
+            </nav>
+        </section>
+        <div class="city_weather">
+            <h1 class="city_weather_name"></h1>
+            <p class="city_weather_date"></p>
+        </div>
+    </header>
+    <main>
+        <article class="section_city">
+            <section class="section_city_image">
+                <img src="" alt="Pic of the selected town" class="section_city_image_display">
+            </section class="section_weather">
+            <section class="section_weather">
+                <div class="section_weather_display">
+                    <img src="" alt="icon for the current weather" class="section_weather__display_icon">
+                    <span class="section_weather__display_temp"></span>
+                </div>
+                <div class="section_weather_details">
+                    <ul class="section_weather_details_list">
+                    </ul>
+                </div>
+            </section>
+        </article>
+        <article>
+        </article>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./assets/js/script.js" defer type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

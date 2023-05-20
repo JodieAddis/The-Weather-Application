@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(42, 145, 156);
+}
+body header .menu {
+  display: flex;
+  justify-content: space-between;
+}
+body header .menu img {
+  max-width: 120%;
+}
+body header .navBar_form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+body header .city_weather {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */

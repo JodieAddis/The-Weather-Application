@@ -14,9 +14,23 @@ export async function weatherCall(event){
         let api = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=5cb7fc28972cc41b9f08bb663b766ae2`); 
         let res = await api.json(); 
         console.log(res);
-        let icon = res.weather[0].icon; 
-        console.log(icon);//Ok
-        document.querySelector('.section_city_image_display').src="https://openweathermap.org/img/wn/"+icon+"@2x.png"; 
+        let icon = await res.weather[0].icon; 
+        // console.log(icon);//Ok
+        document.querySelector('.section_weather__display_icon').src="https://openweathermap.org/img/wn/"+icon+"@2x.png"; //Icon weather
+        let temperature = await res.main.temp;//Unit : Kelvin
+        document.querySelector('.section_weather__display_temp').innerHTML=temperature +`°C`; 
+        // console.log(temperature); 
+        let humidity = await res.main.humidity;// %
+        console.log(humidity); 
+        let wind = res.wind.speed;// speed : m/s
+        console.log(wind); 
+        let clouds = res.clouds.all;// cloudness %
+        console.log(clouds); 
+        document.querySelector('.section_weather_details_list').innerHTML= `
+        <li>Cloudiness : ${clouds}%</li>
+        <li>Humidity : ${humidity}%</li>
+        <li>Wind : ${wind} m/s</li>
+        `
     } catch{
         Swal.fire({
             icon: 'error',
