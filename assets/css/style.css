@@ -1,4 +1,10 @@
+@font-face {
+  font-family: dosis;
+  src: url(../font/Dosis/Dosis-VariableFont_wght.ttf);
+}
 body {
+  width: 100%;
+  height: auto;
   background-color: rgb(42, 145, 156);
 }
 body header .menu {
