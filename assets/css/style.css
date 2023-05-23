@@ -1,25 +1,9 @@
-@font-face {
-  font-family: dosis;
-  src: url(../font/Dosis/Dosis-VariableFont_wght.ttf);
-}
-body {
+html {
   width: 100%;
   height: auto;
-  background-color: rgb(42, 145, 156);
+  background-color: rgb(188, 144, 201);
 }
-body header .menu {
-  display: flex;
-  justify-content: space-between;
-}
-body header .menu img {
-  max-width: 120%;
-}
-body header .navBar_form {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-body header .city_weather {
-  display: flex;
-  justify-content: center;
+html body {
+  background-color: rgb(8, 143, 98);
+  height: 500px;
 }/*# sourceMappingURL=style.css.map */

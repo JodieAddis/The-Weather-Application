@@ -7,6 +7,7 @@
     <meta name="author" content="Jodie Addis">
     <meta name="description" content="A weather application which show the weather from any city you choose">
     <title>Weather Application</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/img/R.png" type="image/x-icon">
 </head>
@@ -41,6 +42,11 @@
                 <div class="section_weather_display">
                     <img src="" alt="icon for the current weather" class="section_weather__display_icon">
                     <span class="section_weather__display_temp"></span>
+                    <div>
+                        <span class="section_weather__display_tempMin"></span>
+                        <span class="section_weather__display_tempMax"></span>
+                    </div>
+                    
                     <span class="section_weather__display_description"></span>
                 </div>
                 <div class="section_weather_details">
@@ -49,7 +55,7 @@
                 </div>
             </section>
         </article>
-        <article class="section_5days">
+        <article class="section_fiveDays">
             <!-- <div>
                 <span></span>
                 <span></span>
