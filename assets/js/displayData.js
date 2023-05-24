@@ -4,7 +4,7 @@ export async function fiveDaysWeather (){
         event.preventDefault();
         let input = document.getElementById('navBar_input').value;
         // console.log(input); //Ok
-        let locationApi = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=1&appid=5cb7fc28972cc41b9f08bb663b766ae2`);
+        let locationApi = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=1&appid=5cb7fc28972cc41b9f08bb663b766ae2`);
         let location = await locationApi.json();
         // console.log(location);//Ok
         let lat = await location[0].lat;
@@ -25,13 +25,25 @@ export async function fiveDaysWeather (){
         let dayData = []; 
         dayData.push(dayOne, dayTwo, dayThree, dayFour, dayFive); 
         // console.log(dayData);
-        for (let i=0; i<data.length; i++){
-            let date = data[i].dt_txt.split(' '); 
-            let dateDay = date[1]; 
-            // console.log(date);
-            // console.log(dateDay);
-            let icon = data[i].weather[0].icon;
-            console.log(icon); 
+        let dayArr= []; 
+        for ( let j=0; j<dayData.length; j++){
+            for (let i=0; i<data.length; i++){
+                let date = data[i].dt_txt.split(' '); 
+                if (dayData[j] === date[0]){
+                    // dayArr.push({"date":dayData[j], "temp":data[i].main.temp, "temp_max":data[i].main.temp_max, "temp_min":data[i].main.temp_min, "icon":data[i].weather[0].icon});
+                    dayArr[j].temp.push(data[i].main.temp);
+                    // dayArr.push(data[i].main.temp_min);
+                    // dayArr.push(data[i].main.temp_max);
+                    // dayArr.push(data[i].weather[0].icon);
+                    // dayArr.push(data[i].main.pressure);
+                    // dayArr.push(data[i].main.humidity);
+                    // dayArr.push(data[i].clouds.all);
+                    // dayArr.push(data[i].wind.speed);
+                    
+                    // console.log(dayArr);
+                }
+            }
+            dayArr.push({"date":dayData[j]});
         }
     }catch{
     }
